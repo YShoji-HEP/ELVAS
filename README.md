@@ -93,5 +93,5 @@ If you use *ELVAS* in your work, please cite [1] and [2].
 
 [1] S. Chigusa, T. Moroi, and Y. Shoji, Phys. Rev.<!--garbled--> Lett. **119** (2017) no.21, 211801 [arXiv:[1707.09301](https://arxiv.org/abs/1707.09301) [hep-ph]].
 
-[2] S. Chigusa, T. Moroi and Y. Shoji, ???
+[2] S. Chigusa, T. Moroi and Y. Shoji, [arXiv:[1803.03902](https://arxiv.org/abs/1803.03902) [hep-ph]].
 
