@@ -12,7 +12,7 @@
 #include "elvas.h"
 
 class ElvasScript : public Interpreter {
-    std::vector<std::pair<double, double>> _dlngamma, _lnPhiC;
+    std::vector<std::pair<double, double>> _lndgamma, _lnPhiC;
 public:
 
     class EScriptError : public std::runtime_error {

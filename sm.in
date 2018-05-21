@@ -73,7 +73,7 @@ if(maxQC > 0.8 * tree | abs(totalQC) > 0.8 * tree, continue())
 
 #Save phiC and dlngamma/dR^(-1) to memory
 save_phiC()
-save_dlngamma_dRinv(lnVg + 4. * LN_RINV - tree - totalQC)
+save_lndgamma_dRinv(lnVg + 4. * LN_RINV - tree - totalQC)
 
 [END_ROUTINE]
 #Calculate ln gamma

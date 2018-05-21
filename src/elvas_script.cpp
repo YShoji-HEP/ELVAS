@@ -30,8 +30,8 @@ ElvasScript::ElvasScript(std::istream& arg_is, std::ostream& arg_os) : Interpret
         return Elvas::gaugeQC(arg_x.at(0), -_eval("HIGGS_QUARTIC_COUPLING"), _eval("LN_QR"));
     };
 
-    auto savedLnGamma = [ this ](const std::vector<double>& arg_x) {
-        _dlngamma.emplace_back(_eval("LN_RINV"), arg_x.at(0));
+    auto saveLnDGamma = [ this ](const std::vector<double>& arg_x) {
+        _lndgamma.emplace_back(_eval("LN_RINV"), arg_x.at(0));
         return 0.;
     };
 
@@ -43,19 +43,19 @@ ElvasScript::ElvasScript(std::istream& arg_is, std::ostream& arg_os) : Interpret
 
     auto initialize = [ this ](const std::vector<double>& arg_x) {
         _lnPhiC.clear();
-        _dlngamma.clear();
+        _lndgamma.clear();
         return 0.;
     };
 
     auto checkSize = [ this ](const std::vector<double>& arg_x) {
-        return _dlngamma.size() >= 3;
+        return _lndgamma.size() >= 3;
     };
 
     auto getMaxLnRinv = [ this ](const std::vector<double>& arg_x) {
-        if (_dlngamma.size() < 3) {
+        if (_lndgamma.size() < 3) {
             throw EScriptError("get_max_lnRinv: Too small data size.");
         }
-        auto it_max = std::max_element(_dlngamma.begin(), _dlngamma.end(), [](const auto& a, const auto& b) {
+        auto it_max = std::max_element(_lndgamma.begin(), _lndgamma.end(), [](const auto& a, const auto& b) {
             return a.first < b.first;
         });
         double temp = it_max->first;
@@ -67,10 +67,10 @@ ElvasScript::ElvasScript(std::istream& arg_is, std::ostream& arg_os) : Interpret
     };
 
     auto getMinLnRinv = [ this ](const std::vector<double>& arg_x) {
-        if (_dlngamma.size() < 3) {
+        if (_lndgamma.size() < 3) {
             throw EScriptError("get_min_lnRinv: Too small data size.");
         }
-        auto it_min = std::min_element(_dlngamma.begin(), _dlngamma.end(), [](const auto& a, const auto& b) {
+        auto it_min = std::min_element(_lndgamma.begin(), _lndgamma.end(), [](const auto& a, const auto& b) {
             return a.first < b.first;
         });
         double temp = it_min->first;
@@ -82,7 +82,7 @@ ElvasScript::ElvasScript(std::istream& arg_is, std::ostream& arg_os) : Interpret
     };
 
     auto getLnGamma = [ this ](const std::vector<double>& arg_x) {
-        return Elvas::getLnGamma(_dlngamma, arg_x.at(0), arg_x.at(1));
+        return Elvas::getLnGamma(_lndgamma, arg_x.at(0), arg_x.at(1));
     };
 
     auto outputPrecision = [ &arg_os ](const std::vector<double>& arg_x) {
@@ -98,7 +98,7 @@ ElvasScript::ElvasScript(std::istream& arg_is, std::ostream& arg_os) : Interpret
     setFunc("output_precision", 1, outputPrecision);
     setFunc("initialize", 0, initialize);
     setFunc("save_phiC", 0, saveLnPhiC);
-    setFunc("save_dlngamma_dRinv", 1, savedLnGamma);
+    setFunc("save_lndgamma_dRinv", 1, saveLnDGamma);
     setFunc("is_data_enough", 0, checkSize);
     setFunc("get_max_lnRinv", 1, getMaxLnRinv);
     setFunc("get_min_lnRinv", 1, getMinLnRinv);
