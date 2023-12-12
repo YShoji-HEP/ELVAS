@@ -15,6 +15,7 @@
 #include "ast.h"
 #include "ntools.h"
 #include <unordered_map>
+#include <iostream>
 
 namespace ASTReader {
     namespace x3 = boost::spirit::x3;

@@ -9,7 +9,7 @@
 #define VERSION_H
 
 #define ELVAS_VERSION_MAJOR 1
-#define ELVAS_VERSION_MINOR 1
+#define ELVAS_VERSION_MINOR 2
 
 #endif /* VERSION_H */
 
