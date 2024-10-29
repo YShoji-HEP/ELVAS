@@ -72,7 +72,7 @@ For Windows, you may use Cygwin, MinGW, or Visual C++. In any case, you need to 
 
 The simplest way to use *ELVAS* in your model is to modify **sm.in**, which includes routines for the standard model case, and to prepare the data of the renormalization group evolution in a similar format as **sm.dat**.
 You can easily add quantum corrections from extra scalars, fermions, and gauge bosons in **sm.in**.
-For a quick guide, see Section 4.1 of the [manual](https://github.com/YShoji-HEP/ELVAS/blob/master/manual.pdf).
+For a quick guide, see Section 4.1 of the [manual](https://github.com/YShoji-HEP/ELVAS/blob/master/manual/manual.pdf).
 
 To run the program, type
 ``` shell
