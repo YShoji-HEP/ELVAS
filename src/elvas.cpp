@@ -212,6 +212,7 @@ void Elvas::printHeader(std::ostream& arg_out) {
     box.printStr("https://github.com/YShoji-HEP/ELVAS");
     box.emptyLine(1);
     box.printStr("Phys.Rev.Lett. 119 (2017) no.21, 211801");
-    box.printStr("arXiv: 1803.03902 [hep-ph]");
+    box.printStr("Phys. Rev. D 97, 116012 (2018)");
+    box.printStr("arXiv: 2406.05180 [hep-ph]");
     box.emptyLine(2);
 }
