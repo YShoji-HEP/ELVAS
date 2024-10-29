@@ -1,14 +1,19 @@
 ELVAS
 ===============================================================================
+[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/YShoji-HEP/ELVAS/blob/main/LICENSE)
+![LastCommit](https://img.shields.io/github/last-commit/YShoji-HEP/ELVAS?style=flat-square)
+
 C++ Package for ELectroweak VAcuum Stability
 ## Introduction ##
 
-ELVAS is a C++ package for the calculation of the decay rate of a false vacuum at the one-loop level, based on the formulae developed in [1, 2]. ELVAS is applicable to models with the following features:
+ELVAS is a C++ package for the calculation of the decay rate of a false vacuum at the one-loop level, based on the formulae developed in [1, 2]. The degeneracy of the gauge transverse modes is corrected according to [3].
+
+ELVAS is applicable to models with the following features:
 + Only one scalar boson is responsible for the vacuum decay.
 + Classical scale invariance (approximately) holds. In particular, the potential of the scalar field responsible for the vacuum decay should be well approximated by the quartic form for the calculation of the bounce solution. (Thus, the bounce is nothing but the so-called Fubini instanton.)
 + The instability of the scalar potential occurs due to RG effects; thus, the quartic coupling constant becomes negative at a high scale.
 
-If you use ELVAS in scholarly work, please cite [1] and [2].
+If you use ELVAS in scholarly work, please cite [1], [2] and [3].
 
 ## Download and Install ##
 
@@ -52,11 +57,11 @@ If everything works well, you will see as a result
 
 ``` shell
 mHiggs       mTop         log10(gamma x Gyr Gpc^3)
-1.250900e+02 1.731000e+02 -5.822292e+02
-1.248500e+02 1.731000e+02 -5.419800e+02
-1.253300e+02 1.731000e+02 -6.271929e+02
-1.250900e+02 1.725000e+02 -9.112475e+02
-1.250900e+02 1.737000e+02 -3.982585e+02
+1.250900e+02 1.731000e+02 -5.796066e+02
+1.248500e+02 1.731000e+02 -5.396598e+02
+1.253300e+02 1.731000e+02 -6.242081e+02
+1.250900e+02 1.725000e+02 -9.053941e+02
+1.250900e+02 1.737000e+02 -3.968497e+02
 ```
 after a header.
 ### Windows ###
@@ -89,9 +94,12 @@ The allowed options are
 ```
 ## Citation ##
 
-If you use *ELVAS* in your work, please cite [1] and [2].
+If you use *ELVAS* in your work, please cite these papers.
 
-[1] S. Chigusa, T. Moroi, and Y. Shoji, Phys. Rev.<!--garbled--> Lett. **119** (2017) no.21, 211801 [arXiv:[1707.09301](https://arxiv.org/abs/1707.09301) [hep-ph]].
+[1] S. Chigusa, T. Moroi, and Y. Shoji, Phys. Rev. Lett. 119,
+211801 (2017), [arXiv:1707.09301](https://arxiv.org/abs/1707.09301) [hep-ph].
 
-[2] S. Chigusa, T. Moroi and Y. Shoji, [arXiv:[1803.03902](https://arxiv.org/abs/1803.03902) [hep-ph]].
+[2] S. Chigusa, T. Moroi, and Y. Shoji, Phys. Rev. D 97,
+116012 (2018), [arXiv:1803.03902](https://arxiv.org/abs/1803.03902) [hep-ph].
 
+[3] P. Baratella, M. Nemevšek, Y. Shoji, K. Trailović, L. Ubaldi, [arXiv:2406.05180](https://arxiv.org/abs/2406.05180) [hep-ph].

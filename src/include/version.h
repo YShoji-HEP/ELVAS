@@ -8,8 +8,8 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define ELVAS_VERSION_MAJOR 1
-#define ELVAS_VERSION_MINOR 2
+#define ELVAS_VERSION_MAJOR 2
+#define ELVAS_VERSION_MINOR 0
 
 #endif /* VERSION_H */
 
